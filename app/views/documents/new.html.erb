@@ -1,0 +1,26 @@
+<h3>New</h3>
+
+<%= form_for @document do |f| %>
+
+  <p>
+    <%= f.label :name %> <br/>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :description %> <br/>
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => "Select Category" %>
+  </p>
+
+  <p>
+    <%= f.file_field :file %>
+  </p>
+
+  <p>
+    <%= f.submit "Upload File" %>
+  </p>
+
+<% end %>
