@@ -14,4 +14,11 @@ RSpec.describe Category, :type => :model do
       expect(build(:category, description: nil)).not_to be_valid
     end
   end
+
+  describe 'friendly id' do
+    it 'is generated' do
+      category = build(:category)
+      expect(category.slug)
+    end
+  end
 end
