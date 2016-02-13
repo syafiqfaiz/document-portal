@@ -26,6 +26,21 @@ ActiveRecord::Schema.define(version: 20160213130137) do
 
   add_index "categories", ["slug"], name: "index_categories_on_slug", unique: true, using: :btree
 
+  create_table "documents", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "count"
+    t.string   "file"
+    t.integer  "category_id"
+    t.json     "images"
+    t.string   "slug"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "documents", ["category_id"], name: "index_documents_on_category_id", using: :btree
+  add_index "documents", ["slug"], name: "index_documents_on_slug", unique: true, using: :btree
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false
@@ -52,4 +67,5 @@ ActiveRecord::Schema.define(version: 20160213130137) do
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
   add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
+  add_foreign_key "documents", "categories"
 end
