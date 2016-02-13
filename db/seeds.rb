@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+categories_names = %W(loan contract disclaimer refinance project)
+categories = []
+categories_names.each do |name|
+  categories << Category.create(name: name, description: Faker::Lorem.paragraph(2, true))
+end
