@@ -18,11 +18,11 @@ RSpec.describe Document, :type => :model do
       expect(build(:document, images: nil)).not_to be_valid
     end
 
-    skip it 'fail without name' do
+    skip it 'fail without file' do
       expect(build(:document, file: nil)).not_to be_valid
     end
 
-    skip it 'fail without category' do
+    it 'fail without category' do
       expect(build(:document, category: nil)).not_to be_valid
     end
   end
