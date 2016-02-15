@@ -22,12 +22,8 @@ Rails.application.routes.draw do
   delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
   get "/sign_up" => "clearance/users#new", as: "sign_up"
 
-  root 'clearance/sessions#new'
 
   resources :users, only: [:show]
-
-  # test upload
-  resources :documents, only: [:index, :new, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
