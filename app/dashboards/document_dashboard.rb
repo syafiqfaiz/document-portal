@@ -11,7 +11,7 @@ class DocumentDashboard < Administrate::BaseDashboard
     category: Field::BelongsTo,
     id: Field::Number,
     name: Field::String,
-    description: Field::String,
+    description: Field::Text,
     count: Field::Number,
     file: Field::String,
     images: Field::String.with_options(searchable: false),

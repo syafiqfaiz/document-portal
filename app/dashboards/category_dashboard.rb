@@ -11,7 +11,7 @@ class CategoryDashboard < Administrate::BaseDashboard
     documents: Field::HasMany,
     id: Field::Number,
     name: Field::String,
-    description: Field::String,
+    description: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     slug: Field::String,
