@@ -1,6 +1,8 @@
 class Document < ActiveRecord::Base
 
-  belongs_to :category 
+  mount_uploader :file, FileUploader
+
+  belongs_to :category
 
 
   validates :name, :description, :category, presence: true

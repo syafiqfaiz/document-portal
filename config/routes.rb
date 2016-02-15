@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   namespace :admin do
     DashboardManifest::DASHBOARDS.each do |dashboard_resource|
       resources dashboard_resource
@@ -6,6 +7,27 @@ Rails.application.routes.draw do
 
     root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
   end
+
+  resources :passwords, controller: "clearance/passwords", only: [:create, :new]
+  # resource :session, controller: "clearance/sessions", only: [:create]
+  resource  :session, :controller => 'sessions', :only => [:new, :create, :destroy]
+
+  resources :users, controller: "clearance/users", only: [:create] do
+    resource :password,
+      controller: "clearance/passwords",
+      only: [:create, :edit, :update]
+  end
+
+  get "/sign_in" => "clearance/sessions#new", as: "sign_in"
+  delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
+  get "/sign_up" => "clearance/users#new", as: "sign_up"
+
+  root 'clearance/sessions#new'
+
+  resources :users, only: [:show]
+
+  # test upload
+  resources :documents, only: [:index, :new, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
