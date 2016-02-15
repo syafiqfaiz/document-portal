@@ -1,0 +1,14 @@
+# Add configuration values here, as shown below.
+
+aws_access_key_id: "AKIAJRBEFLXIIWXMN7IA"
+aws_secret_access_key: "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"
+mandrill_username: ""
+mandrill_password: ""
+
+development:
+  fog_directory: syahir-testing
+production:
+  fog_directory: syahir-testing
+
+
+
