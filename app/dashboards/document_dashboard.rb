@@ -13,7 +13,7 @@ class DocumentDashboard < Administrate::BaseDashboard
     name: Field::String,
     description: Field::Text,
     count: Field::Number,
-    file: Field::String,
+    file: Field::CarrierwaveField,
     images: Field::String.with_options(searchable: false),
     slug: Field::String,
     created_at: Field::DateTime,
@@ -54,10 +54,8 @@ class DocumentDashboard < Administrate::BaseDashboard
     :category,
     :name,
     :description,
-    :count,
     :file,
     :images,
-    :slug,
   ]
 
   # Overwrite this method to customize how documents are displayed

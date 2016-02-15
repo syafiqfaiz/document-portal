@@ -48,7 +48,6 @@ class CategoryDashboard < Administrate::BaseDashboard
     :documents,
     :name,
     :description,
-    :slug,
   ]
 
   # Overwrite this method to customize how categories are displayed
