@@ -17,6 +17,6 @@
 
 # Ignore bash / IRB / Byebug history files
 /.bash_history
-/.byebug_hist
+/.byebug_history
 /.pry_history
 /.guard_history
