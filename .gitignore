@@ -15,5 +15,11 @@
 # Ignore application configuration
 /config/application.yml
 
+# Ignore bash / IRB / Byebug history files
+/.bash_history
+/.byebug_history
+/.pry_history
+/.guard_history
+
 # Ignore all uploads file
 /public/uploads/*/
