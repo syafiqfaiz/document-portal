@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :categories, only: [:show, :index]
+
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   # resource :session, controller: "clearance/sessions", only: [:create]
   resource  :session, :controller => 'sessions', :only => [:new, :create, :destroy]
