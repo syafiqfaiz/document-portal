@@ -20,3 +20,6 @@
 /.byebug_history
 /.pry_history
 /.guard_history
+
+# Ignore all uploads file
+/public/uploads/*/
