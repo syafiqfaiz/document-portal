@@ -7,6 +7,7 @@ class CreateSubscriptions < ActiveRecord::Migration
       t.string :payment_method
       t.string :payment_id
       t.datetime :paid_at
+      t.string :status
       t.datetime :end_at
 
       t.timestamps null: false
