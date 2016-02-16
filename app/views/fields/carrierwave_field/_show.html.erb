@@ -1,1 +1,3 @@
-<%= field.to_s %>
+<% if field.url.present? %>
+  <a href="<%= field.url %>">Download</a> | <%= field.file_name %>
+<% end %>
