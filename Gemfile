@@ -11,6 +11,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'friendly_id', '~> 5.1.0'
+gem "administrate", "~> 0.1.3"
 gem 'clearance'
 gem "figaro"
 gem 'carrierwave', '0.10.0'
@@ -27,10 +28,11 @@ group :development,:test do
  gem "rspec-rails", "~> 3.1.0"
  gem "factory_girl_rails", "~> 4.4.1"
  gem 'byebug'
+ gem 'faker', '~> 1.6', '>= 1.6.1'
 end
 
 group :test do
- gem "faker", "~> 1.4.3"
+ gem 'faker', '~> 1.6', '>= 1.6.1'
  gem "capybara", "~> 2.4.3"
  gem "database_cleaner", "~> 1.3.0"
  gem "launchy", "~> 2.4.2"
