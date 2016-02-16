@@ -3,10 +3,10 @@ class DocumentsController < ApplicationController
 
   def index
 
+    @documents = Document.all.order(:name).page(params[:page]).per(5)
+
     if params[:cat].present?
-      @documents = Document.where(category_id: params[:cat])
-    else
-      @documents = Document.all
+      @documents = @documents.where(category_id: params[:cat])
     end
 
   end

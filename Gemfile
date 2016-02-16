@@ -19,6 +19,8 @@ gem "mini_magick"
 gem "fog"
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
+gem 'kaminari'
+
 
 group :development do
   gem 'web-console', '~> 2.0'
