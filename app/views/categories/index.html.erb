@@ -1,0 +1,6 @@
+<h1>Categories#index</h1>
+
+<% @categories.each do |category| %>
+  <%= render "/categories/show", category: category %>
+<% end %>
+

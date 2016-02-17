@@ -1,0 +1,17 @@
+<div class="container">
+
+  <!-- menu -->
+  <%= render 'common/shared/menu' %>
+
+  <h3>Main Index</h3>
+
+
+  <ul>
+    <% @category.each do |cat| %>
+      <li><%= link_to "#{cat.name}", documents_path(cat: cat.id ) %></li>
+    <% end %>
+  </ul>
+
+</div>
+
+

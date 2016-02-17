@@ -6,9 +6,14 @@ categories_names.each do |name|
 end
 
 categories.each do |category|
-  rand(3..10).times{category.documents.create(name: Faker::Company.bs, description: Faker::Lorem.paragraph(2, true))}
+  rand(3..10).times do 
+    category.documents.create(name: Faker::Company.bs, description: Faker::Lorem.paragraph(2, true))
+  end
 end
 
 plans = []
 plans << Plan.create(name: 'Yearly Subscription', description: "One year unlimited access", price: 100.00, active: true)
 plans << Plan.create(name: 'Monthly Subscription', description: "One month unlimited access", price: 50.00, active: true)
+
+admin = User.create(email: "admin@admin.com", password: "password", admin: true)
+

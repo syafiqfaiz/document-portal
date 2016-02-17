@@ -1,0 +1,9 @@
+<div class="category" id="category_<%= category.id %>">
+  <h2 class="page-header"><%= category.name %></h2>
+  <p class="category-description"><%= category.description %></p>
+</div>
+<ol>
+  <% category.documents.each do |document| %>
+    <li><h3><%= document.name %> <small><%= document.description %></small></h3></li>
+  <% end %>
+</ol>

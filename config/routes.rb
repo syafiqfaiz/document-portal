@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :categories, only: [:show, :index]
+
   namespace :admin do
     DashboardManifest::DASHBOARDS.each do |dashboard_resource|
       resources dashboard_resource
@@ -24,6 +26,11 @@ Rails.application.routes.draw do
 
 
   resources :users, only: [:show]
+
+  resources :home, only: [:index]
+  resources :documents, only: [:index, :show]
+  # documents_path  GET /documents(.:format)  documents#index
+  # document_path GET /documents/:id(.:format)  documents#show
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

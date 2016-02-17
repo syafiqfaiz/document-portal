@@ -1,5 +1,7 @@
 class Document < ActiveRecord::Base
 
+  paginates_per 5
+
   mount_uploader :file, FileUploader
 
   belongs_to :category
