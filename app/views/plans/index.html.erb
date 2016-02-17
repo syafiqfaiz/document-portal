@@ -1,0 +1,5 @@
+<h1>Plans index</h1>
+
+<% @plans.each do |plan| %>
+  <%= render '/plans/show', plan: plan %>
+<% end %>
