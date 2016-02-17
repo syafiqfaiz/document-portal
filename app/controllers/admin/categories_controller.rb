@@ -1,5 +1,6 @@
 module Admin
   class CategoriesController < Admin::ApplicationController
+    before_filter :authenticate_admin
     # To customize the behavior of this controller,
     # simply overwrite any of the RESTful actions. For example:
     #
