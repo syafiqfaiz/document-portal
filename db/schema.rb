@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20160216090000) do
     t.string   "description"
     t.decimal  "price"
     t.boolean  "active"
+    t.integer  "duration"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

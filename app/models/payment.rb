@@ -5,6 +5,6 @@ class Payment
   end
 
   def url
-    "https//syafiqfaiz.github.io"
+    "http://syafiqfaiz.github.io/"
   end
 end

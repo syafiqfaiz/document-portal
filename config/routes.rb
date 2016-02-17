@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :payment_callbacks, only: :create
+
   resources :subscriptions, only: [:update, :create]
 
   resources :plans, only: :index

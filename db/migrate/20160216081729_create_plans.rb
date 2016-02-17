@@ -5,6 +5,7 @@ class CreatePlans < ActiveRecord::Migration
       t.string :description
       t.decimal :price
       t.boolean :active
+      t.integer :duration
 
       t.timestamps null: false
     end
