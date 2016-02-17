@@ -17,7 +17,8 @@ gem "figaro"
 gem 'carrierwave', '0.10.0'
 gem "mini_magick"
 gem "fog"
-
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
 
 group :development do
   gem 'web-console', '~> 2.0'
@@ -32,7 +33,6 @@ group :development,:test do
 end
 
 group :test do
- gem 'faker', '~> 1.6', '>= 1.6.1'
  gem "capybara", "~> 2.4.3"
  gem "database_cleaner", "~> 1.3.0"
  gem "launchy", "~> 2.4.2"
