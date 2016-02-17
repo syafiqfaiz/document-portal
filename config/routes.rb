@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :plans, only: :index
+  
   resources :categories, only: [:show, :index]
 
   namespace :admin do
