@@ -3,7 +3,6 @@
   <p class="plan-description"><%= plan.description %></p>
   <p class="plan-price"><%= number_to_currency(plan.price, unit: "Rm") %></p>
 
-  <%= link_to() do %>
-    <button class="subscribe">Subscribe now!</button>
-  <% end %>
+
+  <%= button_to "Subscribe now!",subscriptions_path(plan: plan.id), method: :post %>
 </div>

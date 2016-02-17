@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20160216090000) do
     t.string   "payment_method"
     t.string   "payment_id"
     t.datetime "paid_at"
+    t.string   "status"
     t.datetime "end_at"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false

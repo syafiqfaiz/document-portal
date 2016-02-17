@@ -20,6 +20,7 @@ gem "fog"
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'kaminari'
+gem 'simple_form'
 
 
 group :development do
