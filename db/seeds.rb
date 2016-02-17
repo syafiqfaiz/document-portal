@@ -8,5 +8,9 @@ end
 
 
 categories.each do |category|
-  rand(3..10).times{category.documents.create(name: Faker::Company.bs, description: Faker::Lorem.paragraph(2, true))}
+  rand(3..10).times{category.documents.create(name: Faker::Company.bs,
+    description: Faker::Lorem.paragraph(2, true)
+    )}
 end
+
+admin = User.create(email: "admin@admin.com", password: "password", admin: true)

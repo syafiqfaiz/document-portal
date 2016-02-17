@@ -8,4 +8,8 @@ class CarrierwaveField < Administrate::Field::Base
   def url
     data.url
   end
+
+  def file_name
+    data.file.filename
+  end
 end
