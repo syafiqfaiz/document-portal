@@ -39,9 +39,9 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   resources :home, only: [:index]
-  
+
   root 'home#index'
-  
+
   # documents_path  GET /documents(.:format)  documents#index
   # document_path GET /documents/:id(.:format)  documents#show
 
