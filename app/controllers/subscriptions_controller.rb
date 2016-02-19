@@ -40,6 +40,5 @@ subscription status
   active
   rejected
   expired
-
-    
+  
 =end

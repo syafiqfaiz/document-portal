@@ -7,10 +7,16 @@
 
 
   <ul>
-    <% @category.each do |cat| %>
+    <% @categories.each do |cat| %>
       <li><%= link_to "#{cat.name}", documents_path(cat: cat.id ) %></li>
     <% end %>
   </ul>
+
+  <div class="plans">
+    <% @plans.each do |plan| %>
+      <%= render '/plans/show', plan: plan %>
+    <% end %>
+  </div>
 
 </div>
 

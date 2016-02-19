@@ -6,13 +6,11 @@
 # you're free to overwrite the RESTful controller actions.
 module Admin
   class ApplicationController < Administrate::ApplicationController
+    include Clearance::Controller
     before_filter :authenticate_admin
 
     def authenticate_admin
-      # TODO Add authentication logic here.
-      authenticate_or_request_with_http_basic do |username, password|
-        username == APP_CONFIG['development']['admin_name'] && password == APP_CONFIG['development']['admin_password']
-      end
+      redirect_to root unless signed_in? && current_user.is_admin?
     end
 
     # Override this value to specify the number of elements to display at a time

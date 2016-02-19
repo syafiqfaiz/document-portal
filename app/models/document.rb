@@ -12,4 +12,12 @@ class Document < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
 
+  def category_name
+    "#{category.name}"
+  end
+
+  def count_increment
+    self.count += 1
+    self.save
+  end
 end

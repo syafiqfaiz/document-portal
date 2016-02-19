@@ -4,6 +4,6 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.includes(:documents).find(params[:id])
+    @category = Category.includes(:documents).friendly.find(params[:id])
   end
 end

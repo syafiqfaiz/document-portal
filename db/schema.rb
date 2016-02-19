@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160216090000) do
+ActiveRecord::Schema.define(version: 20160218085747) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,13 +29,13 @@ ActiveRecord::Schema.define(version: 20160216090000) do
   create_table "documents", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
-    t.integer  "count"
+    t.integer  "count",       default: 0
     t.string   "file"
     t.integer  "category_id"
     t.json     "images"
     t.string   "slug"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   add_index "documents", ["category_id"], name: "index_documents_on_category_id", using: :btree
