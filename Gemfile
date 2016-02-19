@@ -21,6 +21,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'kaminari'
 gem 'simple_form'
+gem 'pg_search'
 
 
 group :development do
