@@ -2,6 +2,8 @@ class SubscriptionsController < ApplicationController
   before_action :require_login
   before_action :set_subscription, only: :update
 
+
+
   def create
     @subscription = current_user.subscriptions.find_or_create_by(status: 'new', plan_id: params[:plan])
   end
@@ -25,7 +27,7 @@ redirect to payment
 
 
 >>>>> in payment callback controller >>>>>
-if payment succes 
+if payment succes
   status: active
   redirect to index
 else
@@ -40,5 +42,5 @@ subscription status
   active
   rejected
   expired
-  
+
 =end
