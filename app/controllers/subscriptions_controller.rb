@@ -25,7 +25,7 @@ redirect to payment
 
 
 >>>>> in payment callback controller >>>>>
-if payment succes 
+if payment succes
   status: active
   redirect to index
 else
@@ -40,5 +40,5 @@ subscription status
   active
   rejected
   expired
-  
+
 =end

@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class DocumentDashboard < Administrate::BaseDashboard
+class UserDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,17 +8,14 @@ class DocumentDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    category_name: Field::String,
-    category: Field::BelongsTo,
     id: Field::Number,
-    name: Field::String,
-    description: Field::Text,
-    count: Field::Number,
-    file: Field::CarrierwaveField,
-    images: Field::String.with_options(searchable: false),
-    slug: Field::String,
+    email: Field::String,
+    admin: Field::Boolean,
+    subscriptions: Field::HasMany,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    subscribe: Field::Boolean,
+    subscribe_expired: Field::DateTime,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -28,42 +25,29 @@ class DocumentDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
-    :category,
-    :name,
-    :description,
-    :count,
+    :email,
+    :admin,
+    :subscribe,
+    :subscribe_expired,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :id,
-    :category,
-    :name,
-    :description,
-    :count,
-    :file,
-    :images,
-    :slug,
-    :created_at,
-    :updated_at,
+    :email,
+    :admin,
+    :subscribe,
+    :subscribe_expired,
   ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :category,
-    :name,
-    :description,
-    :file,
-    :images,
+    :id,
+    :email,
+    :admin,
   ]
 
-  # Overwrite this method to customize how documents are displayed
-  # across all pages of the admin dashboard.
-  #
-  def display_resource(document)
-    "Document -> #{document.name}"
-  end
 end
