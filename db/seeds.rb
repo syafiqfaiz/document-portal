@@ -1,4 +1,3 @@
-require 'faker'
 categories_names = %W(loan contract disclaimer refinance project)
 categories = []
 categories_names.each do |name|

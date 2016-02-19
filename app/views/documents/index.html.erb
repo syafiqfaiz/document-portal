@@ -14,9 +14,9 @@
     </tr>
     <% @documents.each do |doc| %>
     <tr>
-      <td><%= doc.name %></td>
+      <td><%= link_to(doc.name , category_document_path(doc.category, doc) )%></td>
       <td><%= doc.description %></td>
-      <td><%= Category.find(doc.category_id).name %></td>
+      <td><%= doc.category.name %></td>
       <td>Image</td>
       <td><button class="btn btn-primary">Do Something</button></td>
     </tr>

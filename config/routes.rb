@@ -1,18 +1,23 @@
 Rails.application.routes.draw do
 
+  resources :downloads, only: :show
+
   resources :payment_callbacks, only: :create
 
   resources :subscriptions, only: [:update, :create]
 
   resources :plans, only: :index
-  
-  resources :categories, only: [:show, :index]
+
+  resources :categories, only: [:show, :index] do
+    resources :documents, only: [:index, :show]
+  end
+
+  resources :documents, only: :index
 
   namespace :admin do
     DashboardManifest::DASHBOARDS.each do |dashboard_resource|
       resources dashboard_resource
     end
-
     root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
   end
 
@@ -34,7 +39,9 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   resources :home, only: [:index]
-  resources :documents, only: [:index, :show]
+  
+  root 'home#index'
+  
   # documents_path  GET /documents(.:format)  documents#index
   # document_path GET /documents/:id(.:format)  documents#show
 
