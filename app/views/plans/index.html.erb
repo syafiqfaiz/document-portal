@@ -1,5 +1,15 @@
-<h1>Plans index</h1>
+<div class="container">
+
+  <!-- menu -->
+  <%= render 'common/shared/menu' %>
+
+  <h3>Plans index</h3>
+
 
 <% @plans.each do |plan| %>
   <%= render '/plans/show', plan: plan %>
 <% end %>
+
+</div>
+
+
