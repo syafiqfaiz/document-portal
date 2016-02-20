@@ -1,8 +1,9 @@
 class Category < ActiveRecord::Base
-  validates :name, :description, presence: true
 
+  include PgSearch
   has_many :documents, dependent: :destroy
 
+  validates :name, :description, presence: true
 
   extend FriendlyId
   friendly_id :name, use: :slugged

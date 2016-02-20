@@ -4,6 +4,16 @@
   <%= render 'common/shared/menu' %>
 
   <h3>Document Index</h3>
+
+
+  <h3>Search</h3>
+  <%= form_tag documents_path, method: :get do %>
+    <p>
+      <%= text_field_tag :query, params[:query] %>
+      <%= submit_tag "Search", name: nil %>
+    </p>
+  <% end %>
+
   <table class="table table-hover">
     <tr>
       <th>Name</th>

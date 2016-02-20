@@ -22,7 +22,7 @@ gem 'autoprefixer-rails'
 gem 'kaminari'
 gem 'simple_form'
 gem "omniauth-google-oauth2"
-
+gem 'pg_search'
 
 
 group :development do

@@ -1,4 +1,11 @@
 class Document < ActiveRecord::Base
+  include PgSearch
+
+  pg_search_scope :search, against: [:name, :description],
+    using: {tsearch: {dictionary: "english"}},
+      associated_against: {
+        category: [:name]
+      }
 
   paginates_per 5
 
@@ -20,4 +27,14 @@ class Document < ActiveRecord::Base
     self.count += 1
     self.save
   end
+
+  def self.text_search(query)
+    if query.present?
+      search(query)
+    else
+      all
+    end
+  end
+
 end
+

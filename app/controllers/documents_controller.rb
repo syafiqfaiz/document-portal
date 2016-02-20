@@ -2,7 +2,8 @@ class DocumentsController < ApplicationController
   before_action :set_document, only: :show
 
   def index
-    @documents = Document.all.order(:name).page(params[:page]).per(5)
+    @documents = Document.text_search(params[:query]).page(params[:page]).per(100)
+    # @documents = Document.all.order(:name).page(params[:page]).per(5)
 
     if params[:cat].present?
       @documents = @documents.where(category_id: params[:cat])
@@ -16,4 +17,5 @@ class DocumentsController < ApplicationController
   def set_document
     @document = Document.friendly.find(params[:id])
   end
+
 end
