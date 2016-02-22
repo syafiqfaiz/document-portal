@@ -13,6 +13,8 @@ class DashboardManifest
     :users,
     :categories,
     :documents,
+    :plans,
+    :subscriptions,
   ]
 
   # `ROOT_DASHBOARD`
