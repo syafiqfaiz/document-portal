@@ -23,7 +23,7 @@ gem 'kaminari'
 gem 'simple_form'
 gem "omniauth-google-oauth2"
 gem 'pg_search'
-
+gem 'aws-sdk', '~> 2'
 
 group :development do
   gem 'web-console', '~> 2.0'
