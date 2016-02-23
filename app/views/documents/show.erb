@@ -1,5 +1,19 @@
-<div class="document-show">
-  <h2 class="document-title"><%= @document.name %></h2>
-  <p class="description"><%= @document.description %></p>
-  <%= button_to "Download!", download_path(@document.slug), method: :get %>
+<div class="container">
+
+  <!-- menu -->
+  <%= render 'common/shared/menu' %>
+
+  <div class="document-show">
+    <h2 class="document-title"><%= @document.name %></h2>
+    <p class="description"><%= @document.description %></p>
+    <% if @document.images.present? %>
+      <img src="<%= @document.images %>" alt="">
+    <% else %>
+      <img src="http://placehold.it/350x150" alt="">
+    <% end %>
+    <br>
+    <br>
+    <%= button_to "Download!", download_path(@document.slug), method: :get %>
+  </div>
+
 </div>

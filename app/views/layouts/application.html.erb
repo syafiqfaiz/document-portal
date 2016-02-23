@@ -6,6 +6,9 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+  <div class="container">
+    <%= flash_messages %>
+  </div>
   <div id="header">
     <% if signed_in? -%>
       Signed in as <strong><%= current_user.name %></strong>!
