@@ -5,7 +5,7 @@ categories_names.each do |name|
 end
 
 categories.each do |category|
-  rand(3..10).times do 
+  rand(3..10).times do
     category.documents.create(name: Faker::Company.bs, description: Faker::Lorem.paragraph(2, true))
   end
 end
