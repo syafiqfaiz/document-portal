@@ -69,16 +69,14 @@ ActiveRecord::Schema.define(version: 20160311200828) do
     t.integer  "plan_id"
     t.decimal  "amount_paid"
     t.string   "payment_method"
-    t.string   "payment_id"
-    t.datetime "paid_at"
+    t.string   "tranID"
+    t.datetime "paydate"
     t.string   "status"
     t.datetime "end_at"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.string   "tranID"
     t.string   "mol_status"
     t.string   "skey"
-    t.datetime "paydate"
   end
 
   add_index "subscriptions", ["plan_id"], name: "index_subscriptions_on_plan_id", using: :btree

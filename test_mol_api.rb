@@ -1,3 +1,13 @@
+user state =
+=begin
+subscription status
+  new
+  pending
+  active
+  rejected
+  expired
+
+=end
 
 
 

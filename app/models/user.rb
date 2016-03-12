@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   end
 
   def has_active_subscription?
-    subscriptions.where(end_date = ?, >= DateTime.now.to_s).any?
+    subscribe
   end
 
 
