@@ -14,4 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require smoothproducts.min
+//= require jquery.min
+//= require application/custom
 //= require_tree .

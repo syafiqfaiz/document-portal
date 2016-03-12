@@ -1,8 +1,0 @@
-<div class="plan-box" id="plan_<%= plan.id %>">
-  <h3 class="plan-title"><%= plan.name %></h3>
-  <p class="plan-description"><%= plan.description %></p>
-  <p class="plan-price"><%= number_to_currency(plan.price, unit: "Rm") %></p>
-
-
-  <%= button_to "Subscribe now!",subscriptions_path(plan: plan.id), method: :post %>
-</div>

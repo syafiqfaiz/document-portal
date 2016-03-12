@@ -1,16 +1,9 @@
-<div class="container">
 
-  <!-- menu -->
-  <%= render 'common/shared/menu' %>
-
-  <h3>Main Index</h3>
-
-
-  <ul>
-    <% @categories.each do |cat| %>
-      <li><%= link_to "#{cat.name}", documents_path(cat: cat.id ) %></li>
-    <% end %>
-  </ul>
+<%= render 'home/banner' %>
+<%= render 'home/feature_documents' %>
+<%= render 'home/why_us' %>
+<%= render 'home/pricing' %>
 
 
-</div>
+
+
