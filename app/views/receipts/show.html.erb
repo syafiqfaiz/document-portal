@@ -1,0 +1,32 @@
+<div class="section pricing" id="price">
+  <div class="container">
+    <h2 class="text-center section-title invert">Payment Details</h2>
+    <div class="row">
+      <%= render 'common/invoice_receipt/invoice_receipt'%>
+    </div>
+  </div>
+</div>
+
+<!-- paste it on merchant receipt page (which shows payment success/failed) -->
+<script type='text/javascript'>
+ var sa = 'test7290';
+ window.onload = function() {
+  m = document.createElement('IFRAME');
+  m.setAttribute('src', "https://www.onlinepayment.com.my/MOLPay/API/chkstat/returnipn.php?treq=0&sa=" + sa);
+  m.setAttribute('seamless', 'seamless');
+  m.setAttribute('width', 0);
+  m.setAttribute('height', 0);
+  m.setAttribute('frameborder', 0);
+  m.setAttribute('scrolling', 'no');
+  m.setAttribute('style', 'border:none !important;');
+  document.body.appendChild(m);
+ };
+</script>
+
+
+
+
+
+
+
+

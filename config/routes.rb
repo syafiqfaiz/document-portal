@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   resources :documents, only: :index
   resources :plans, only: :index
   resources :subscriptions, only: [:index, :update, :create]
+  resources :receipts, only: [:show]
   resources :payment_callbacks, only: :create
   resources :downloads, only: :show
 

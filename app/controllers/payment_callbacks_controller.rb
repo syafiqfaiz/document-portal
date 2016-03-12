@@ -11,7 +11,7 @@ class PaymentCallbacksController < ApplicationController
                           amount_paid: get_params[:amount],
                           end_at: get_params[:end_date])
 
-    redirect_to root_path, flash: {success: get_params[:flash_message]}
+    redirect_to receipt_path(@subscription), flash: {success: get_params[:flash_message]}
   end
 
   private
