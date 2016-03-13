@@ -1,21 +1,33 @@
 class PaymentCallbacksController < ApplicationController
   protect_from_forgery with: :null_session
   def create
-    #pending on API
-    @subscription = Subscription.find_by(id: params[:id])
-    # if success 
-    @subscription.update(status: 'active', payment_id: 1234, paid_at: DateTime.now, end_at: end_date)
-    redirect_to root_path, notice: "Thank you, you now have unlimited access to all documents."
-    # else
-      #@subscription.update(status: 'rejected')
-      # redirect_to plans_path, alert: "Payment rejected"
-    # end
+    @subscription = Subscription.find_by(id: params[:orderid])
+    @subscription.update(skey: params[:skey],
+                          tranID: params[:tranID],
+                          mol_status: params[:status],
+                          paydate: get_params[:paydate],
+                          status: get_params[:subscription_status],
+                          payment_method: params[:channel],
+                          amount_paid: get_params[:amount],
+                          end_at: get_params[:end_date])
+
+    redirect_to root_path, flash: {success: get_params[:flash_message]}
   end
 
   private
 
-  def end_date
-    duration = @subscription.plan.duration
-    DateTime.now + duration.months
+  def get_params
+    result = {
+      end_date: params[:status] == "00" ? DateTime.now + @subscription.plan.duration : nil,
+      amount: params[:status] == "00" ? params[:amount] : nil,
+      paydate: params[:status] == "00" ? params[:paydate] : nil,
+      flash_message: params[:status] == "00" ? "Thank you, you now have unlimited access to all documents." : "Payment rejected",
+      subscription_status: params[:status] == "00" ? :active : :rejected
+    }
   end
+
 end
+
+
+
+

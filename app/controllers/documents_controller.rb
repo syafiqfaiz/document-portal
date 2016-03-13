@@ -3,11 +3,7 @@ class DocumentsController < ApplicationController
 
   def index
     @documents = Document.text_search(params[:query]).page(params[:page]).per(100)
-    # @documents = Document.all.order(:name).page(params[:page]).per(5)
-
-    if params[:cat].present?
-      @documents = @documents.where(category_id: params[:cat])
-    end
+    return @documents = @documents.where(category_id: params[:cat]) if params[:cat].present?
   end
 
   def show

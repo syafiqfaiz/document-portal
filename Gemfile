@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.3.0'
 
 gem 'rails', '4.2.5'
 gem 'pg', '~> 0.15'
@@ -33,7 +34,7 @@ end
 group :development,:test do
  gem "rspec-rails", "~> 3.1.0"
  gem "factory_girl_rails", "~> 4.4.1"
- gem 'byebug'
+ gem 'pry-rails'
  gem 'faker', '~> 1.6', '>= 1.6.1'
 end
 

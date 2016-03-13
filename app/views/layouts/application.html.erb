@@ -7,7 +7,7 @@
 </head>
 <body>
   <div class="container">
-    <%= flash_messages %>
+
   </div>
   <div id="header">
     <% if signed_in? -%>
@@ -19,11 +19,7 @@
     <% end -%>
   </div>
 
-  <div id="flash">
-    <% flash.each do |key, value| -%>
-      <div id="flash_<%= key %>"><%=h value %></div>
-    <% end %>
-  </div>
+
 
   <%= yield %>
 </body>
