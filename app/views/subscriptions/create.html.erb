@@ -1,0 +1,26 @@
+
+<div class="section pricing" id="price">
+  <div class="container">
+    <h2 class="text-center section-title invert">Subscription</h2>
+    <div class="row">
+      <div class="col-md-4">
+
+        <% @plan = Plan.find_by(id: @subscription.plan_id) %>
+        <% @page = "Invoice"%>
+        <%= render 'common/invoice_receipt/invoice_receipt' %>
+
+        <%= simple_form_for(@subscription) do |f| %>
+          <%= f.hidden_field :plan_id, value: @plan_id  %>
+          <%= f.input :terms_and_conditions, as: :boolean, label: ("I agree to the <strong>#{link_to 'Terms and Conditions', "#"}</strong>.").html_safe %>
+          <div class="submit-field">
+            <%= f.submit "Pay Now", class: "btn btn-success btn-lg btn-block" do %>
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            <% end %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+

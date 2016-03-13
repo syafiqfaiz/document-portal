@@ -1,7 +1,7 @@
 <div class="section pricing" id="price">
   <div class="container">
     <h2 class="text-center section-title invert">Pricing</h2>
-    <div class="row">
+    <div class="row ">
 
     <div class="col-md-2">
     </div>
@@ -14,7 +14,7 @@
             <li>RM <%= plan.price %></li>
             <li><%= plan.duration %> Months</li>
             <li>
-              <%= button_to "Subscribe now!",subscriptions_path(plan: plan.id), method: :post, class: "btn btn-dark btn-lg"%>
+              <a href="#" class="btn btn-dark btn-lg">Get it now</a>
             </li>
           </ul>
         </div>
@@ -24,4 +24,5 @@
     </div>
   </div>
 </div>
+
 

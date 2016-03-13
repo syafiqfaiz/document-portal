@@ -1,0 +1,39 @@
+<!-- feature doc -->
+
+<div class="section category">
+  <div class="container">
+    <div class="row">
+
+    <% @categories.each do |cat| %>
+      <div class="col-md-4 col-xs-6">
+        <div class="card">
+          <span class="glyphicon glyphicon-home fa-3x"></span>
+          <h3 class="cat-title"><%= cat.name.titleize %></h3>
+          <% documents = Document.where(category_id: cat.id).limit(3) %>
+          <ul class="list-item">
+            <% documents.each do |doc| %>
+              <li>
+                <a href="#"><%= doc.description %></a>
+              </li>
+            <% end %>
+          </ul>
+          <a class="btn btn-more">More ...</a>
+        </div>
+      </div>
+    <% end %>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
