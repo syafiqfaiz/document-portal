@@ -25,6 +25,7 @@ gem 'simple_form'
 gem "omniauth-google-oauth2"
 gem 'pg_search'
 gem 'aws-sdk', '~> 2'
+gem 'font-awesome-sass'
 
 group :development do
   gem 'web-console', '~> 2.0'
@@ -32,15 +33,16 @@ group :development do
 end
 
 group :development,:test do
- gem "rspec-rails", "~> 3.1.0"
- gem "factory_girl_rails", "~> 4.4.1"
- gem 'pry-rails'
- gem 'faker', '~> 1.6', '>= 1.6.1'
+  gem 'byebug'
+  gem "rspec-rails", "~> 3.1.0"
+  gem "factory_girl_rails", "~> 4.4.1"
+  gem 'pry-rails'
+  gem 'faker', '~> 1.6', '>= 1.6.1'
 end
 
 group :test do
- gem "capybara", "~> 2.4.3"
- gem "database_cleaner", "~> 1.3.0"
- gem "launchy", "~> 2.4.2"
- gem "selenium-webdriver", "~> 2.43.0"
+  gem "capybara", "~> 2.4.3"
+  gem "database_cleaner", "~> 1.3.0"
+  gem "launchy", "~> 2.4.2"
+  gem "selenium-webdriver", "~> 2.43.0"
 end

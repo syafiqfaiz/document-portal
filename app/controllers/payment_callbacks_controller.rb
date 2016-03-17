@@ -2,14 +2,15 @@ class PaymentCallbacksController < ApplicationController
   protect_from_forgery with: :null_session
   def create
     @subscription = Subscription.find_by(id: params[:orderid])
-    @subscription.update(skey: params[:skey],
+    @subscription.update( skey: params[:skey],
                           tranID: params[:tranID],
                           mol_status: params[:status],
                           paydate: get_params[:paydate],
                           status: get_params[:subscription_status],
                           payment_method: params[:channel],
                           amount_paid: get_params[:amount],
-                          end_at: get_params[:end_date])
+                          end_at: get_params[:end_date]
+                        )
 
     redirect_to receipt_path(@subscription), flash: {success: get_params[:flash_message]}
   end

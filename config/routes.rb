@@ -37,6 +37,4 @@ Rails.application.routes.draw do
   resources :downloads, only: :show
 
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
-
-
 end

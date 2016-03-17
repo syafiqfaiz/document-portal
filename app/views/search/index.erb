@@ -1,0 +1,21 @@
+<div class="resultBox" id="view2">
+  <div class="result">
+    <p>Search result </p>
+    <a class="btn-close btn-search" href="#top"> <i class="fa fa-close"></i></a>
+    <ul>
+      <% @documents.each do |document| %>
+        <li>
+          <img src="http://lorempixel.com/150/200/" class="thumb">
+          <div class="info">
+            <h4><a href="<%= category_document_path(document.category.slug, document.slug) %>"><%= document.name %></a></h4>
+            <p class="meta"><i class="fa fa-tag"></i> <a>Housing</a></p>
+            <p><%= document.description %></p>
+              <a href="" class="btn btn-download" >Download English</a>
+              <a href="" class="btn btn-download">Download Malay</a>
+          </div>
+          <div class="clearfix"></div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
