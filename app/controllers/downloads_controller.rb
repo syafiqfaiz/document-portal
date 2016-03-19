@@ -1,5 +1,6 @@
 class DownloadsController < ApplicationController
   before_action :set_document
+  before_action :require_login
 
   def show
     if current_user.has_active_subscription?

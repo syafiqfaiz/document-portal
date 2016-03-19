@@ -9,15 +9,14 @@
         <div class="card">
           <span class="glyphicon glyphicon-home fa-3x"></span>
           <h3 class="cat-title"><%= cat.name.titleize %></h3>
-          <% documents = Document.where(category_id: cat.id).limit(3) %>
           <ul class="list-item">
-            <% documents.each do |doc| %>
+            <% cat.top_5_documents.each do |doc| %>
               <li>
-                <a href="#"><%= doc.description %></a>
+                <a href="<%= category_document_path(cat.slug, doc.slug)  %>"><%= doc.name %></a>
               </li>
             <% end %>
           </ul>
-          <a class="btn btn-more">More ...</a>
+          <a class="btn btn-more" href="<%=  category_path(cat.slug) %>">More ...</a>
         </div>
       </div>
     <% end %>
@@ -25,15 +24,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-

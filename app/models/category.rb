@@ -8,6 +8,10 @@ class Category < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
 
+  def top_5_documents
+    documents.order(count: :desc).first(5)
+  end
+
   def to_s
     "#{name}"
   end

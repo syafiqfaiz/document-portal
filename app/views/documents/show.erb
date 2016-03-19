@@ -1,22 +1,29 @@
-
-<div class="section" id="profile">
-  <div class="description">
-    <div class="container">
-
-      <div class="document-show">
-        <h2 class="document-title"><%= @document.name %></h2>
-        <p class="description"><%= @document.description %></p>
-        <% if @document.images.present? %>
-          <img src="<%= @document.images %>" alt="">
-        <% else %>
-          <img src="http://placehold.it/350x150" alt="">
-        <% end %>
-        <br>
-        <br>
-        <%= button_to "Download!", download_path(@document.slug), method: :get %>
+<div class="section" id="preview">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 text-center">
+        <div class="sp-loading"><img src="images/sp-loading.gif" alt=""><br>LOADING IMAGES</div>
+        <div class="sp-wrap">
+          <a href="images/borang.jpg"><img src="images/borang-sm.jpg" alt=""></a>
+          <a href="images/2.jpg"><img src="images/2_tb.jpg" alt=""></a>
+          <a href="images/3.jpg"><img src="images/3_tb.jpg" alt=""></a>
+          <a href="images/4.jpg"><img src="images/4_tb.jpg" alt=""></a>
+          <a href="images/5.jpg"><img src="images/5_tb.jpg" alt=""></a>
+          <a href="images/6.jpg"><img src="images/6_tb.jpg" alt=""></a>
+        </div>
       </div>
-
+      <div class="col-md-6">
+        <div class="box description">
+          <h4><%= @document.name.capitalize %></h4>
+          <p class="meta"><i class="fa fa-tag"></i> <a><%= @document.category.name.capitalize %></a></p>
+          <p><%= @document.description %></p>
+          <div class="row ld-mt-40">
+            <div class="col-sm-6">
+              <a href="<%= download_path(@document.slug) %>" class="btn btn-block btn-download">Download</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
 </div>
