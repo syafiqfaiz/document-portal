@@ -20,16 +20,15 @@
             <th>Name</th>
             <th>Description</th>
             <th>Category</th>
-            <th>Action</th>
+            <th>Download</th>
           </tr>
           <% @documents.each do |doc| %>
           <tr>
-            <td><%= doc.name.titleize %></td>
+            <td>
+             <%= link_to(doc.name.titleize ,category_document_path(doc.category, doc)) %></td>
             <td><%= doc.description %></td>
             <td><%= doc.category.name.titleize %></td>
             <td>
-              <%= link_to("Preview",category_document_path(doc.category, doc),class: "btn btn-primary") %>
-              |
               <%= link_to("Download",download_path(doc),class: "btn btn-primary") %>
             </td>
           </tr>

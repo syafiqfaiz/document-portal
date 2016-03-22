@@ -9,6 +9,4 @@ class AwsResourceService
       .object(document.file.path)
       .presigned_url(:get, expires_in: 1.minutes)
   end
-
-
 end
