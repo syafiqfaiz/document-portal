@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class DocumentDashboard < Administrate::BaseDashboard
+class DocumentImageDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,15 +8,9 @@ class DocumentDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    category_name: Field::String,
-    category: Field::BelongsTo,
-    document_images: Field::HasMany,
     id: Field::Number,
-    name: Field::String,
-    description: Field::Text,
-    count: Field::Number,
-    file: Field::CarrierwaveField,
-    slug: Field::String,
+    image: Field::CarrierwaveImageField,
+    document: Field::BelongsTo,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }
@@ -28,42 +22,32 @@ class DocumentDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
-    :category,
-    :name,
-    :description,
-    :count,
+    :image,
+    :document,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :id,
-    :category,
-    :name,
-    :description,
-    :count,
-    :file,
-    :slug,
+    :image,
+    :document,
     :created_at,
     :updated_at,
-    :document_images,
   ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :category,
-    :name,
-    :description,
-    :file,
-    :document_images,
+    :image,
+    :document,
   ]
 
   # Overwrite this method to customize how documents are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(document)
-    "Document -> #{document.name}"
-  end
+  # def display_resource(document)
+  #   "Document -> #{document.name}"
+  # end
 end

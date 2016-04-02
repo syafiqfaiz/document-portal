@@ -15,6 +15,7 @@ class DashboardManifest
     :documents,
     :plans,
     :subscriptions,
+    :document_images,
   ]
 
   # `ROOT_DASHBOARD`
