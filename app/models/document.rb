@@ -12,6 +12,7 @@ class Document < ActiveRecord::Base
   mount_uploader :file, FileUploader
 
   belongs_to :category
+  has_many :document_images, dependent: :destroy
 
 
   validates :name, :description, :category, presence: true

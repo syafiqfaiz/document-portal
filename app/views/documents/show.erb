@@ -6,14 +6,16 @@
       <div class="document-show">
         <h2 class="document-title"><%= @document.name %></h2>
         <p class="description"><%= @document.description %></p>
-        <% if @document.images.present? %>
-          <img src="<%= @document.images %>" alt="">
+        <% if @document.document_images.present? %>
+          <% @document.document_images.each do |doc| %>
+            <img src="<%= doc.image %>" alt="" height="250" width="250">
+          <% end %>
         <% else %>
           <img src="http://placehold.it/350x150" alt="">
         <% end %>
         <br>
         <br>
-        <%= button_to "Download!", download_path(@document.slug), method: :get %>
+        <%= button_to "Download!", download_path(@document.slug), method: :get, class: "btn btn-primary"%>
       </div>
 
     </div>
